@@ -8,7 +8,7 @@
 ## Dataset Collection
  To collect the data run **datasetgenerator.py** and don't forget to change gear shifting mode to manual.And set the screen monitor values as per your requirement.\
  While collecting data use:         **'P'** key to pause\
-                                    **'S'** key to save collected data
+ ...................................**'S'** key to save collected data
 ## Training 
  To train model run **train.py**.\
  
@@ -18,8 +18,8 @@
                                   
  ## Environment
  My rig: Ryzen 3 1200 (not OC)\
-         GTX 1050Ti (not OC)\
-         2x8gb Ram @ 3100Mhz\
+ .......GTX 1050Ti (not OC)\
+ .......2x8gb Ram @ 3100Mhz\
 With this I am able to predict around 45 fps for the used model.If you have a better card  use a complex model(or RGB channels instead of grayscale).\
 \
 Game Settings: Very low                                    
