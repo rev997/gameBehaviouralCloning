@@ -14,7 +14,7 @@
  
  ## Testing 
  To test the model run **test.py**\
- **Note:** While testing, first start test.py  then start the game.Else the you might encounter with CUBLAS_HANDLING error.
+ **Note:** While testing, first start test.py, then start the game else you might encounter CUBLAS_HANDLING error.
                                   
  ## Environment
  My rig:<pre>Ryzen 3 1200 (not OC)
