@@ -20,7 +20,7 @@
  My rig:<pre>Ryzen 3 1200 (not OC)
         GTX 1050Ti (not OC)
         2x8gb Ram @ 3100Mhz</pre>
-With my rig I am able to predict around 45 fps for the used model.If you have a better card  use a complex model(or RGB channels instead of grayscale).\
+With my rig I am able to predict around 45 fps for the used model.If you have a better card  use a complex model(or YUV channels instead of grayscale).\
 \
 Game Settings: <pre>Dynamic Render Quality: Very low
                     Resolution : 1024 x 768</pre>
