@@ -26,4 +26,4 @@ Game Settings: <pre>Dynamic Render Quality: Very low
                     Resolution : 1024 x 768</pre>
 \
 ## Pre-trained model
-A pre-trained model file 'models' is included in the repository.Load it using keras.models.load_model.This is just a basic model  trained on just 10000 samples.
+A pre-trained model file 'models' is included in the repository. Load it using keras.models.load_model.This is just a basic model  trained on just 10000 samples.
