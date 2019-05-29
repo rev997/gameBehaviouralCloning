@@ -9,6 +9,7 @@
  <pre>
  While collecting data use:         'P' key to pause
                                     'S' key to save collected data</pre>
+ Before training the model run remove_zeros.py
 ## Training 
  To train model run **train.py**.
  
