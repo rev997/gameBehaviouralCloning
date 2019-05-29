@@ -22,4 +22,5 @@
         2x8gb Ram @ 3100Mhz</pre>
 With my rig I am able to predict around 45 fps for the used model.If you have a better card  use a complex model(or RGB channels instead of grayscale).\
 \
-Game Settings: Very low                                    
+Game Settings: <pre>Dynamic Render Quality: Very loe
+                    Resolution : 1023x 768</pre>
