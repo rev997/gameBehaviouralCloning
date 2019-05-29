@@ -39,12 +39,6 @@ class TestCallback(keras.callbacks.Callback):
         mean = np.mean(diff)
         std = np.std(diff)
         print('mean:',mean,'std: ',std)
-        if abs(prev_mean)>abs(mean) and abs(prev_std)>abs(std):
-            print('SAVING MODEL')
-            model.save("models")
-            print('model saved!')
-        prev_mean=mean
-        prev_std=std
 
 train_data = np.load("dataset_no_zeros.npy")
 print(len(train_data))
@@ -57,3 +51,4 @@ test_y = [i[1] for i in test]
 X=np.array(X).reshape(-1,WIDTH,HEIGHT,CHANNELS)
 test_x=np.array(test_x).reshape(-1,WIDTH,HEIGHT,CHANNELS)
 model.fit(X, Y, validation_data=(test_x, test_y),callbacks=[TestCallback((test_x, test_y))],epochs=EPOCHS,shuffle=True)
+model.save('models')
