@@ -32,7 +32,6 @@ class TestCallback(keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs={}):
         predictions= self.model.predict(test_x)
-        predictions=np.round(predictions,decimals=2)
         diff=predictions.flatten()-test_y
         mean = np.mean(diff)
         std = np.std(diff)
@@ -47,10 +46,8 @@ while 1:
     train = train_data[:-test_samples]
     test = train_data[-test_samples:]
     Y = [i[1] for i in train]
-    Y=np.round(Y,decimals=2)
     test_x = np.array([i[0] for i in test])
     test_y = [i[1] for i in test]
-    test_y=np.round(test_y,decimals=2)
     X=np.array(X).reshape(-1,WIDTH,HEIGHT,CHANNELS)
     test_x=np.array(test_x).reshape(-1,WIDTH,HEIGHT,CHANNELS)
     model.fit(X, Y, validation_data=(test_x, test_y),callbacks=[TestCallback((test_x, test_y))],shuffle=True)
