@@ -1,3 +1,4 @@
+
 import numpy as np
 from keras.optimizers import Adam
 from keras.models import Sequential
@@ -9,7 +10,7 @@ import cv2
 WIDTH = 300
 HEIGHT = 100
 CHANNELS=1
-EPOCHS = 30
+EPOCHS = 100
 num_classes=1
 test_samples=5000
 
@@ -45,11 +46,10 @@ while 1:
     print(len(train_data))
     train = train_data[:-test_samples]
     test = train_data[-test_samples:]
+    X=[i[0] for i in train]
     Y = [i[1] for i in train]
     test_x = np.array([i[0] for i in test])
     test_y = [i[1] for i in test]
     X=np.array(X).reshape(-1,WIDTH,HEIGHT,CHANNELS)
     test_x=np.array(test_x).reshape(-1,WIDTH,HEIGHT,CHANNELS)
     model.fit(X, Y, validation_data=(test_x, test_y),callbacks=[TestCallback((test_x, test_y))],shuffle=True)
-
-
