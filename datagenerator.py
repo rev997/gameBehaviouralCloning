@@ -76,7 +76,7 @@ def func2():
         for event in events:
             a=event.ev_type+event.code+str(event.state)
             if 'AbsoluteABS_X' in a:
-                value=round(int(a[13:])/32767,2)#input rounded between 0,1
+                value=int(a[13:])/32767#input rounded between 0,1
                 if value>1:
                     value=1
                 if value<-1:
