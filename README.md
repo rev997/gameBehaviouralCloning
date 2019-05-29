@@ -7,8 +7,8 @@
 ## Dataset Collection
  To collect the data run **datasetgenerator.py** and don't forget to change gear shifting mode to manual.And set the screen monitor values as per your requirement.\
  <pre>
- While collecting data use:         **'P'** key to pause
-                                    **'S'** key to save collected data</pre>
+ While collecting data use:         'P' key to pause
+                                    'S' key to save collected data</pre>
 ## Training 
  To train model run **train.py**.
  
