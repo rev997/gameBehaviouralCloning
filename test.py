@@ -27,7 +27,6 @@ with mss.mss() as sct:
             img = cv2.blur(img,(2,2))
             X=np.array([img]).reshape(-1,width,height,channels)
             predictions=model.predict(X)
-            predictions=np.round(predictions,decimals=2)
             MyVirtual.set_value('AxisLx',predictions[0][0])
             print("steering predcition:",predictions[0],"   fps:",str(1/(time.time()-last_time)))
             last_time=time.time()
