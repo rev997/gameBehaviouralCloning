@@ -17,7 +17,7 @@
  **Note:** While testing, first start test.py  then start the game.Else the you might encounter with CUBLAS_HANDLING error.
                                   
  ## Environment
- My rig:<pre> Ryzen 3 1200 (not OC)
+ My rig:<pre>Ryzen 3 1200 (not OC)
         GTX 1050Ti (not OC)
         2x8gb Ram @ 3100Mhz</pre>
 With my rig I am able to predict around 45 fps for the used model.If you have a better card  use a complex model(or RGB channels instead of grayscale).\
