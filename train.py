@@ -14,16 +14,16 @@ num_classes=1
 test_samples=5000
 
 model = Sequential()
-model.add(Conv2D(24, kernel_size=(5, 5), strides=(2, 2),activation='sigmoid',input_shape=(WIDTH,HEIGHT,CHANNELS)))
+model.add(Conv2D(24, kernel_size=(5, 5), strides=(2, 2),activation='tanh',input_shape=(WIDTH,HEIGHT,CHANNELS)))
 model.add(Conv2D(36, kernel_size=(5, 5), strides=(2, 2),activation='tanh'))
-model.add(Conv2D(36, kernel_size=(5, 5), strides=(2, 2),activation='sigmoid'))
 model.add(Conv2D(48, kernel_size=(5, 5), strides=(2, 2),activation='tanh'))
-model.add(Conv2D(64, kernel_size=(3, 3), strides=(1, 1),activation='linear'))
+model.add(Conv2D(64, kernel_size=(3, 3), strides=(1, 1),activation='tanh'))
+model.add(Conv2D(64, kernel_size=(3, 3), strides=(1, 1),activation='tanh'))
 model.add(Flatten())
-model.add(Dense(100, activation='linear'))
+model.add(Dense(1000, activation='tanh'))
+model.add(Dense(100, activation='tanh'))
 model.add(Dense(50,activation='tanh'))
 model.add(Dense(1, activation='linear'))
-model=keras.models.load_model('models2')
 model.compile(loss="mean_squared_error", optimizer='adam', metrics=['accuracy'])
 
 class TestCallback(keras.callbacks.Callback):
@@ -37,8 +37,9 @@ class TestCallback(keras.callbacks.Callback):
         mean = np.mean(diff)
         std = np.std(diff)
         print(' absolute_dif:',diff,'predictions:',predictions ,' mean:',mean,'std: ',std)
-        print('SAVING MODEL!')
+        print('SAVING MODEL')
         model.save("models")
+        print('model saved!')
 
 while 1:
     train_data = np.load("dataset.npy")
