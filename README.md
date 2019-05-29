@@ -24,6 +24,6 @@ With my rig I am able to predict around 45 fps for the used model.If you have a 
 \
 Game Settings: <pre>Dynamic Render Quality: Very low
                     Resolution : 1024 x 768</pre>
-\
+                    
 ## Pre-trained model
 A pre-trained model file 'models' is included in the repository. Load it using keras.models.load_model.This is just a sample model  trained on just 10000 images,use large training set for better results.
