@@ -10,7 +10,7 @@ import cv2
 WIDTH = 300
 HEIGHT = 100
 CHANNELS=1
-EPOCHS = 100
+EPOCHS = 30
 num_classes=1
 test_samples=5000
 
@@ -41,15 +41,16 @@ class TestCallback(keras.callbacks.Callback):
         model.save("models")
         print('model saved!')
 
-while 1:
-    train_data = np.load("dataset_no_zeros.npy")
-    print(len(train_data))
-    train = train_data[:-test_samples]
-    test = train_data[-test_samples:]
-    X=[i[0] for i in train]
-    Y = [i[1] for i in train]
-    test_x = np.array([i[0] for i in test])
-    test_y = [i[1] for i in test]
-    X=np.array(X).reshape(-1,WIDTH,HEIGHT,CHANNELS)
-    test_x=np.array(test_x).reshape(-1,WIDTH,HEIGHT,CHANNELS)
+train_data = np.load("dataset_no_zeros.npy")
+print(len(train_data))
+train = train_data[:-test_samples]
+test = train_data[-test_samples:]
+X=[i[0] for i in train]
+Y = [i[1] for i in train]
+test_x = np.array([i[0] for i in test])
+test_y = [i[1] for i in test]
+X=np.array(X).reshape(-1,WIDTH,HEIGHT,CHANNELS)
+test_x=np.array(test_x).reshape(-1,WIDTH,HEIGHT,CHANNELS)
+while EPOCHS:
+    EPOCHS=EPOCHS-1
     model.fit(X, Y, validation_data=(test_x, test_y),callbacks=[TestCallback((test_x, test_y))],shuffle=True)
