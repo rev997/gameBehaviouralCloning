@@ -13,6 +13,8 @@ CHANNELS=1
 EPOCHS = 30
 num_classes=1
 test_samples=5000
+prev_mean=10
+prev_std=10
 
 model = Sequential()
 model.add(Conv2D(24, kernel_size=(5, 5), strides=(2, 2),activation='tanh',input_shape=(WIDTH,HEIGHT,CHANNELS)))
@@ -37,9 +39,12 @@ class TestCallback(keras.callbacks.Callback):
         mean = np.mean(diff)
         std = np.std(diff)
         print('mean:',mean,'std: ',std)
-        print('SAVING MODEL')
-        model.save("models")
-        print('model saved!')
+        if abs(prev_mean)>abs(mean) and abs(prev_std)>abs(std):
+            print('SAVING MODEL')
+            model.save("models")
+            print('model saved!')
+        prev_mean=mean
+        prev_std=std
 
 train_data = np.load("dataset_no_zeros.npy")
 print(len(train_data))
