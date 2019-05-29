@@ -35,13 +35,13 @@ class TestCallback(keras.callbacks.Callback):
         diff=predictions.flatten()-test_y
         mean = np.mean(diff)
         std = np.std(diff)
-        print(' absolute_dif:',diff,'predictions:',predictions ,' mean:',mean,'std: ',std)
+        print('mean:',mean,'std: ',std)
         print('SAVING MODEL')
         model.save("models")
         print('model saved!')
 
 while 1:
-    train_data = np.load("dataset.npy")
+    train_data = np.load("dataset_no_zeros.npy")
     print(len(train_data))
     train = train_data[:-test_samples]
     test = train_data[-test_samples:]
