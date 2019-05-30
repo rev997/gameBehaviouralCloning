@@ -1,4 +1,4 @@
-# gameBehaviouralCloning
+# Steering Prediction
 
 ![](Driving.gif)\
 **Note: Only steering values are predicted keeping speed constant**\
